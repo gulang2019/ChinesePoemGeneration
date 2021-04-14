@@ -1,0 +1,14 @@
+# Original gitignore content
+
+*.pyc
+save/
+.backup/
+
+# PyCharm User settings
+.idea/
+
+# VS Code User settings
+.vscode/
+
+# Temporary Folder
+temp/

@@ -101,20 +101,6 @@ class Planner(Singleton):
             similars = sorted(similars, key=lambda x: x[1])
             result.append(similars[0][0])
             filtered_keywords.append(similars[0][0])
-        '''else:
-            # 否则只好随机找一个关键词，再生成剩余关键词
-            while True:
-                idx = randint(0, len(self.ranked_words) - 1)
-                if self.ranked_words[idx] in self.model:
-                    break
-            result.append(self.ranked_words[idx])
-            filtered_keywords.append(self.ranked_words[idx])
-            for i in range(NUM_OF_SENTENCES - 1):
-                similars = self.model.wv.most_similar(
-                    positive=filtered_keywords)
-                similars = sorted(similars, key=lambda x: x[1])
-                result.append(similars[0][0])
-                filtered_keywords.append(similars[0][0])'''
         temp = result[1:]
         random.shuffle(temp)
         result = [result[0]] + temp

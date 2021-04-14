@@ -36,17 +36,3 @@ def check_uptodate(path: str) -> bool:
     Return true iff the file exists and up-to-date with dependencies.
     """
     return os.path.exists(path)
-    '''
-    if not os.path.exists(path):
-        # File not found.
-        return False
-    timestamp = os.path.getmtime(path)
-    if path in _dependency_dict:
-        for dependency in _dependency_dict[path]:
-            if not os.path.exists(dependency) or \
-                    os.path.getmtime(dependency) > timestamp:
-                # File stale.
-                return False
-    return True
-    '''
-
